@@ -30,7 +30,7 @@ LPECdist<-LPECdist/1000 # to change meters to kilometers
 #Why did I decide to prepare data first?
 #Because I try to avoid using for-loop during optimization preocess, which is not computational efficiency. 
 #So I prepare data into the format that I can calculate a kernel for each pair of farm on each day. 
-#This way we can vectorized function and reduce calculation time.  
+#This way we can vectorize function and reduce calculation time.  
 
 ####### kernel for farms that escape until the time Tinfection-1 ########
 prep_datesc<-function (x,n,c) {
