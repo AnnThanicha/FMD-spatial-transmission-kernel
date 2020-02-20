@@ -14,8 +14,8 @@ duration<-FMDdata$duration[!is.na(FMDdata$duration)]+1#remove NA value
 hist(duration)
 summary(duration)
 descdist(duration, discrete = TRUE, boot=1000)
-gamma_duration <- fitdist(duration, "norm")
-plot(gamma_duration) # I decide to use gamma distribution for generate infectious duration
+gamma_duration <- fitdist(duration, "gamma") # You can test by trying other distribution and check which one is the best fit.
+plot(gamma_duration) # I decide to use gamma distribution for stochatically generating infectious duration
 
 
 ######### Calculate the Rh ###########################
@@ -32,5 +32,6 @@ baselineRh<-Rh(dat = distLPEClong, k0=3.372114e-03,r0= 4.316170e-01, alpha = 2.8
 
 write.table(baselineRh,  "D:/Phd thesis/R code/R-lumpayaklang2/Rh.txt", sep="\t")# export reproduction number
 #I will use this csv to make a risk map in Qgis.
-
+# check this link for how to make a map in Qgis : https://www.polarmicrobes.org/tutorial-on-qgis-how-to-make-a-map/
+#Another options using sf package to making a map.
 
