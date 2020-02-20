@@ -203,6 +203,6 @@ fitll1CI <-mle2(minuslogl = ll1CI, start = list(k0 = 0.005, r0 = 0.2, alpha = 1.
 # Here, I used optimizer "optimx" but there are other optimizers that you can use check ?mle2 for details.
 Kfitll1CI<-profile(fitll1CI, alpha = 0.05) # profile likelihood
 plot(Kfitll1CI)
-confint(Kfitll1CI, level = 0.95)# to get profile CI
+confint(Kfitll1CI, level = 0.95)# to get profile Cconfidence interval
 
 
