@@ -4,7 +4,7 @@
 #### function for randomly assign immune status to susceotible farms ####
 
 random_immmune<- function (stepimmune, immunepercent){ 
-  for(i in 1:round(335/stepimmune)){
+  for(i in 1:round(335/stepimmune)){ #335 is the outbreak period from data
     set.seed(111)
     sampleimmune<-FMDdata$ID[(sample( which(is.na(FMDdata$stopinfectiousdate)), round(immunepercent*length(which(is.na(FMDdata$stopinfectiousdate))))))]
     FMDdata$stopinfectiousdate[FMDdata$ID %in%  sampleimmune ]<-stepimmune*i
