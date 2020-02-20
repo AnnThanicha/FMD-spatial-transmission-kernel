@@ -1,4 +1,4 @@
-############### Randomly assign immune status to susceotible farms ####################
+############### Randomly assign immune status to susceptible farms ####################
 #########################################################################
 
 #### function for randomly assign immune status to susceotible farms ####
