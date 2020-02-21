@@ -1,6 +1,7 @@
 # FMD-spatial-transmission-kernel
 This is r code to estimate spatial transmission kernel parameter using maximum likelihood function.
-Before you start you need to prepare your data in excel into two files.
-1. Farm location data consisted of farmID, longitude, latitude
-2. Outbreak data consisted of farmID,	farm size, 	infection date,	star tinfectious date,	stop infectious date, immunity waningdate
-for details about how to calculate infectious date, immunity waning date. Please read the assumption in the report. 
+Before starting, you need to prepare the outbreak data in to two excel files.
+1. Farm location data : farmID, longitude, latitude
+2. Outbreak data : farmID,	farm size, 	infection date,	start tinfectious date,	stop infectious date, immunity waningdate
+
+For details about how to calculate infectious date, immunity waning date. Please read the assumption in the report. 
