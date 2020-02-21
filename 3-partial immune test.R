@@ -1,7 +1,7 @@
 ############### Randomly assign immune status to susceptible farms ####################
 #########################################################################
 
-#### function for randomly assign immune status to susceotible farms ####
+#### function for randomly assign immune status to susceptible farms ####
 
 random_immmune<- function (stepimmune, immunepercent){ 
   for(i in 1:round(335/stepimmune)){ #335 is the outbreak period from data
@@ -81,7 +81,7 @@ confint(rand30day_0.1_1CI, level = 0.95)# to get profile CI
 ####################################################################################################
 ######  Assumption that immune farms did not became susceptible ##########################
 
-ll1wCI<-function(k0,r0,alpha) { # this function is for
+ll1wCI<-function(k0,r0,alpha) { 
   
   datesc$kernel<-(k0/(1+((datesc$distance/r0)^alpha)))
   datinf$kernel<-(k0/(1+((datinf$distance/r0)^alpha)))
