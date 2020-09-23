@@ -1,28 +1,10 @@
 ########## import data ### Please check data pattern in readme file ####### 
 library(readxl)
 FMDdata <- read_excel("FMDdata.xlsx")
-FMDdist <- read_excel("FMDdist.xlsx")
+FMDdist <- read_excel("distancematrix.xlsx")
 
 summary(FMDdata)
 avpop<-mean(FMDdata$pop)#calculate average farm size
-
-######### calculate Euclidean distance ############
-library(sp)
-library(sf)
-library(raster)
-
-# function for calculate Euclidean distance matrix 
-cal.dist<- function (lon,lat)
-{crdref <- CRS('+proj=longlat +datum=WGS84') # make sure that your latitude and longitude is in WGS84 project system
-i<- cbind(c(lon),c(lat))
-pointmap <- SpatialPoints(i, proj4string=crdref)
-dst <- pointDistance(pointmap, lonlat= TRUE)
-dst <- as.dist(dst)
-D<-as.matrix(dst)
-return(D)
-}
-
-LPECdist<- cal.dist(lon=FMDdist$longitude, lat = FMDdist$latitude)
 LPECdist<-LPECdist/1000 # to change meters to kilometers
 # Now we got the matrix of Euclidean distance between farms in km unit
 
